@@ -1,0 +1,32 @@
+<!-- <ng-container *ngIf="(asyncTabs | async) === null">
+    Loading tabs...
+  </ng-container> -->
+  
+  <mat-tab-group (click)="onTabChange()">
+    <mat-tab *ngFor="let tab of viewTabs;let i = index">
+      <ng-template mat-tab-label>{{tab.name}}</ng-template>
+      <!-- {{tab.content}} -->
+      <section *ngIf="selectedIndex == 0 || tab?.name == 'First'">
+        <div class="row col-12 justify-content">
+          <ng-container *ngFor="let data of cardData">
+            <mat-card  class="example-card">
+              <mat-card-header class="bottompad">
+                <mat-card-title-group>
+                  <mat-card-title>{{data?.dishName}}</mat-card-title>
+                  <mat-card-subtitle>Rs. {{data?.dishPrice}}</mat-card-subtitle>
+                  <mat-card-subtitle>
+                    <button mat-button class="">count</button>
+                  </mat-card-subtitle>
+                  <img mat-card-md-image [src]="data?.dishImage"  alt="Image of {{data?.dishName}}">
+                </mat-card-title-group>
+              </mat-card-header>
+              <mat-card-content>
+                {{data?.dishDescription}}
+              </mat-card-content>
+            </mat-card>
+          </ng-container>
+        </div>
+      </section>
+    </mat-tab>
+  </mat-tab-group>
+  
