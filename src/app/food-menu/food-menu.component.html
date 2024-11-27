@@ -2,26 +2,102 @@
     Loading tabs...
   </ng-container> -->
   
-  <mat-tab-group (click)="onTabChange()">
-    <mat-tab *ngFor="let tab of viewTabs;let i = index">
-      <ng-template mat-tab-label>{{tab.name}}</ng-template>
-      <!-- {{tab.content}} -->
-      <section *ngIf="selectedIndex == 0 || tab?.name == 'First'">
+  <mat-tab-group (selectedIndexChange)="onTabChange($event)">
+    <mat-tab *ngFor="let tab of viewTabs; let i = index">
+      <ng-template mat-tab-label>{{ tab.name }}</ng-template>
+      <section *ngIf="selectedIndex === 0" class="container menuCard">
         <div class="row col-12 justify-content">
-          <ng-container *ngFor="let data of cardData">
-            <mat-card  class="example-card">
+          <ng-container *ngFor="let data of startersCardData">
+            <mat-card class="example-card">
               <mat-card-header class="bottompad">
                 <mat-card-title-group>
-                  <mat-card-title>{{data?.dishName}}</mat-card-title>
-                  <mat-card-subtitle>Rs. {{data?.dishPrice}}</mat-card-subtitle>
+                  <mat-card-title>
+                    <img [src]="data?.dishTypeImg" alt="" class="imgSize">
+                    {{ data?.dishName }}</mat-card-title>
+                  <mat-card-subtitle>Rs. {{ data?.dishPrice }}</mat-card-subtitle>
                   <mat-card-subtitle>
-                    <button mat-button class="">count</button>
+                    <div class="m-2 rounded-border plusminusBtn">
+                     <ng-container *ngIf="!data?.plusminusButton">
+                        <button mat-button (click)="onPlusMinusChange('add', data)">Add</button>
+                     </ng-container>
+                     <ng-container *ngIf="data?.plusminusButton">
+                      <button mat-button (click)="onPlusMinusChange('minus', data)">-</button>
+                      <span>{{ data.count }}</span>
+                      <button mat-button (click)="onPlusMinusChange('plus', data)">+</button>
+                     </ng-container>
+                    </div>
                   </mat-card-subtitle>
-                  <img mat-card-md-image [src]="data?.dishImage"  alt="Image of {{data?.dishName}}">
+                  <img mat-card-md-image [src]="data?.dishImage" alt="Image of {{ data?.dishName }}">
                 </mat-card-title-group>
               </mat-card-header>
               <mat-card-content>
-                {{data?.dishDescription}}
+                {{ data?.dishDescription }}
+              </mat-card-content>
+            </mat-card>
+          </ng-container>
+        </div>
+      </section>
+
+      <section *ngIf="selectedIndex === 1" class="container menuCard">
+        <div class="row col-12 justify-content">
+          <ng-container *ngFor="let data of mealCardData">
+            <mat-card class="example-card">
+              <mat-card-header class="bottompad">
+                <mat-card-title-group>
+                  <mat-card-title>
+                    <img [src]="data?.dishTypeImg" alt="" class="imgSize">
+                    {{ data?.dishName }}</mat-card-title>
+                  <mat-card-subtitle>Rs. {{ data?.dishPrice }}</mat-card-subtitle>
+                  <mat-card-subtitle>
+                    <div class="m-2 rounded-border plusminusBtn">
+                     <ng-container *ngIf="!data?.plusminusButton">
+                        <button mat-button (click)="onPlusMinusChange('add', data)">Add</button>
+                     </ng-container>
+                     <ng-container *ngIf="data?.plusminusButton">
+                      <button mat-button (click)="onPlusMinusChange('minus', data)">-</button>
+                      <span>{{ data.count }}</span>
+                      <button mat-button (click)="onPlusMinusChange('plus', data)">+</button>
+                     </ng-container>
+                    </div>
+                  </mat-card-subtitle>
+                  <img mat-card-md-image [src]="data?.dishImage" alt="Image of {{ data?.dishName }}">
+                </mat-card-title-group>
+              </mat-card-header>
+              <mat-card-content>
+                {{ data?.dishDescription }}
+              </mat-card-content>
+            </mat-card>
+          </ng-container>
+        </div>
+      </section>
+
+      <section *ngIf="selectedIndex === 2" class="container menuCard">
+        <div class="row col-12 justify-content">
+          <ng-container *ngFor="let data of beveragesCardData">
+            <mat-card class="example-card">
+              <mat-card-header class="bottompad">
+                <mat-card-title-group>
+                  <mat-card-title>
+                    <img [src]="data?.dishTypeImg" alt="" class="imgSize">
+                    {{ data?.dishName }}</mat-card-title>
+                  <mat-card-subtitle>Rs. {{ data?.dishPrice }}</mat-card-subtitle>
+                  <mat-card-subtitle>
+                    <div class="m-2 rounded-border plusminusBtn">
+                     <ng-container *ngIf="!data?.plusminusButton">
+                        <button mat-button (click)="onPlusMinusChange('add', data)">Add</button>
+                     </ng-container>
+                     <ng-container *ngIf="data?.plusminusButton">
+                      <button mat-button (click)="onPlusMinusChange('minus', data)">-</button>
+                      <span>{{ data.count }}</span>
+                      <button mat-button (click)="onPlusMinusChange('plus', data)">+</button>
+                     </ng-container>
+                    </div>
+                  </mat-card-subtitle>
+                  <img mat-card-md-image [src]="data?.dishImage" alt="Image of {{ data?.dishName }}">
+                </mat-card-title-group>
+              </mat-card-header>
+              <mat-card-content>
+                {{ data?.dishDescription }}
               </mat-card-content>
             </mat-card>
           </ng-container>
@@ -29,4 +105,5 @@
       </section>
     </mat-tab>
   </mat-tab-group>
+  
   
