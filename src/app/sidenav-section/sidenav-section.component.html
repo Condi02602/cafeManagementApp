@@ -5,11 +5,11 @@
       </button>
       <span>My App</span>
       <span class="example-spacer"></span>
-      <button mat-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <button mat-button routerLink="/login" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         <mat-icon>person</mat-icon>
         Login
       </button>
-      <button mat-button class="example-icon" aria-label="Example icon-button with share icon">
+      <button mat-button routerLink="/signup" class="example-icon" aria-label="Example icon-button with share icon">
         <mat-icon>login</mat-icon>
         Sign Up
       </button>
@@ -33,9 +33,9 @@
               </mat-list-item>
 
               <mat-list-item>
-                <button mat-button routerLink="/bill">
-                  <mat-icon>analytics</mat-icon>
-                  Bill
+                <button mat-button routerLink="/cart">
+                  <mat-icon>shopping_cart</mat-icon>
+                  Cart
                 </button>
               </mat-list-item>
             </mat-nav-list>

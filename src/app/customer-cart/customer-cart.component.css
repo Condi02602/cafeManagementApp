@@ -1,0 +1,28 @@
+.dishTypeImage{
+    height: 25px;
+    width: 25px;
+}
+.dishImage{
+    height: 50px;
+    width: 75px;
+}
+.plusminusbtnStyle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plusminusbtnStyle button {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1;
+    margin: 0 5px;
+}
+
+.value-display {
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+}
