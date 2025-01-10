@@ -1,5 +1,5 @@
 <!-- <p> -->
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="sticky-toolbar">
       <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button>
@@ -9,14 +9,14 @@
         <mat-icon>person</mat-icon>
         Login
       </button>
-      <button mat-button routerLink="/signup" class="example-icon" aria-label="Example icon-button with share icon">
+      <button mat-button (click)="openSignupForm()" class="example-icon" aria-label="Example icon-button with share icon">
         <mat-icon>login</mat-icon>
         Sign Up
       </button>
     </mat-toolbar>
 
     <mat-drawer-container autosize>
-        <mat-drawer #drawer opened="false" mode="side">
+        <mat-drawer #drawer opened="false" mode="side" class="sticky-sidenav">
             <mat-nav-list>
               <mat-list-item>
                 <button mat-button>

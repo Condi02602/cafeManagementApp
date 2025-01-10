@@ -20,4 +20,6 @@ mat-card-header.bottompad{
 ::ng-deep mat-card mat-card-md-image {
   border-radius: 50%; /* Makes the image circular */
 }
-
+.sticky-tab{
+  position: sticky;
+}
