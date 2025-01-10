@@ -1,0 +1,111 @@
+<mat-card class="container col-10 mt-2">
+
+    <div class="mt-4">
+     <div *ngFor="let data of cardItems" class="mb-2">
+         <div class="row">
+            <div class="col-1"><img [src]="data?.dishType" alt="" class="dishTypeImage"></div>
+            <div class="col-2 d-flex justify-content-start"><img [src]="data?.dishImage" alt="" class="dishImage"></div>
+            <div class="col-4 d-flex justify-content-start">{{data?.dishName}}</div>
+            <div class="col-3">
+                <div class="plusminusbtnStyle" *ngIf="!data?.plusminusButton">
+                    <button class="plusminusbtnStyle btn btn-primary" (click)="onPlusMinusButton('minus', data)">-</button>
+                    <span class="value-display">{{data?.count}}</span>
+                    <button class="plusminusbtnStyle btn btn-primary" (click)="onPlusMinusButton('plus', data)">+</button>
+                </div>                
+            </div>
+            <div class="col-1">{{data?.dishPrice}}</div>
+          </div>
+     </div>
+    </div>
+
+    <div class="d-flex justify-content-start col-3 mt-2">
+        <button mat-raised-button routerLink="/menu" color="primary">+ Add more Items</button>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-end">
+        Total Rs. {{ getTotal() | currency: 'INR'}}
+    </div>
+ </mat-card>
+
+<mat-card class="container col-8 mt-3">
+    <div class="mt-4 mb-3">
+        <h1 mat-card-title>Payment options</h1>
+        <div class="col-8 payCardBox">
+            <div class="card mb-2">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="assets/Icons/google-pay.svg" alt="" class="gpayIcon">
+                        </div>
+                        <div class="col-6 d-flex justify-content-start">
+                            conradaruldas@ababa
+                        </div>
+                        <div class="col-5 d-flex justify-content-end">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        </div>
+                    </div>
+                    <div class="row mt-1 col-11 d-flex justify-content-end payBtn">
+                        <!-- <div class="col-11 d-flex justify-content-end"> -->
+                            <button class="btn btn-success ">Pay</button>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-8 payCardBox">
+            <div class="card mb-2">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="assets/Icons/cash.svg" alt="" class="gpayIcon">
+                        </div>
+                        <div class="col-6 d-flex justify-content-start">
+                            Pay cash or ask for QR (Cash/ UPI)
+                        </div>
+                        <div class="col-5 d-flex justify-content-end">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        </div>
+                    </div>
+                    <div class="row mt-1 col-11 d-flex justify-content-end payBtn">
+                        <!-- <div class="col-11 d-flex justify-content-end"> -->
+                            <button class="btn btn-success ">Pay</button>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-8 payCardBox">
+            <div class="card mb-2">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="assets/Icons/credit-card.svg" alt="" class="gpayIcon">
+                        </div>
+                        <div class="col-6 d-flex justify-content-start">
+                            conradaruldas@ababa
+                        </div>
+                        <div class="col-5 d-flex justify-content-end">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        </div>
+                    </div>
+                    <div class="row mt-1 col-11 d-flex justify-content-end payBtn">
+                        <!-- <div class="col-11 d-flex justify-content-end"> -->
+                            <button class="btn btn-success ">Pay</button>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>
+
+<!-- <div class="container rounded-border col-8 payCard">
+    <div class="col-6 d-flex justify-content-start">
+        Total Pay
+    </div>
+    <div class="col-6 d-flex justify-content-start">
+        {{ getTotal() | currency: 'INR'}}
+    </div>
+</div> -->
+
+ 

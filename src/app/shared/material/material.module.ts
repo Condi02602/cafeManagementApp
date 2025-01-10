@@ -88,7 +88,8 @@ const MaterialComponent = [
     PortalModule,
     MatToolbarModule,
     MatSnackBarModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule,
 
 ]
 

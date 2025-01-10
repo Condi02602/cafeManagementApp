@@ -5,3 +5,16 @@
     text-align: center;
     min-height: 600px;
 }
+.sticky-toolbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.sticky-sidenav{
+    /* position: sticky; */
+    /* top: 64px; */
+    /* z-index: 999; */
+}
+.mat-drawer-container{
+    height: 100vh;
+}
