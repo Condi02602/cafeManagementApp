@@ -16,7 +16,7 @@ export class SignupPageComponent implements OnInit{
   showTicks = false;
   step = 1;
   thumbLabel = false;
-  value = 0;
+  // value = 0;
   hide = true;
 
   constructor(private dialog: MatDialog, private formBuilder: FormBuilder){
@@ -25,8 +25,8 @@ export class SignupPageComponent implements OnInit{
       id: new FormControl(''),
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
-      age: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
+      age: new FormControl('0', [Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$")]),
       confirmPassword: new FormControl('', [Validators.required])
     })
   }

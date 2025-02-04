@@ -1,1 +1,40 @@
-<p>login-page works!</p>
+<h1 mat-dialog-title>Welcome user</h1> 
+<div mat-dialog-content> 
+<div class="row mt-1">
+    <mat-form-field appearance="outline">
+        <mat-label>Enter Email</mat-label>
+        <input matInput placeholder="johndoe@gmail.com" />
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+</div>
+
+<div class="row">
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{
+            hide ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
+      </mat-form-field>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <button mat-raised-button (click)="onCancel()" class="w-100">Close</button>
+    </div>
+    <div class="col-6">
+        <button mat-raised-button color="primary" class="w-100">Ok</button> 
+    </div>
+</div> 
+</div> 
+<!-- <div mat-dialog-actions>  -->
+
+<!-- </div>  -->

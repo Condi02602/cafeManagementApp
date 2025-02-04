@@ -11,6 +11,7 @@ import { CustomerCartComponent } from './customer-cart/customer-cart.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmpInfoComponent } from './emp-info/emp-info.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FoodMenuComponent,
     CustomerCartComponent,
     LoginPageComponent,
-    SignupPageComponent
+    SignupPageComponent,
+    EmpInfoComponent
   ],
   imports: [
     BrowserModule,
